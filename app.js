@@ -110,7 +110,7 @@ discordClient.on("presenceUpdate", (oldMember, newMember) => {
 });
 
 discordClient.on("message", (message) => {
-    if(message.author.username === config.discord.username) return;
+    if(message.author.bot) return;
     if(message.channel.id !== config.discord.channel) return;
     if((message.content == null || message.content == "") && message.attachments.size == 0) return;
 
